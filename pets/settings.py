@@ -25,7 +25,7 @@ SECRET_KEY = 'tdpk8!jmjj(s&d((ujl68_0612+4-bo^+pqe3@32mn#=id$*7q'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition

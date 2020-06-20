@@ -12,3 +12,13 @@ def adoption_list(request):
     }
     return render(request, 'adoption/adoption_list.html', context)
 
+
+
+def adoption_detail(request, id):
+    '''detail pet in adoption'''
+
+    pet = Pet.objects.get(id=id)
+    context = {
+        'pet':pet
+    }
+    return render(request, 'adoption/adoption_detail.html', context)

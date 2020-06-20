@@ -1,5 +1,7 @@
 {% extends 'base.html'%}
 
+{% block title%}|Adopción{%endblock%}
+
 {% block content %}
     <h1 class="text-center pt-4 mb-5">Peludos en Adopción</h1>
 
@@ -10,8 +12,8 @@
                 <div class="card m-auto" style="width: 18rem; ">
                     <img src="/media/{{pet.imagen_destacada}}" class="card-img-top rounded" alt="{{pet.nombre}}">
                     <div class="card-body text-center">
-                    <h5 class="card-title">{{pet.nombre}}</h5>
-                    <a href="#" class="btn btn-info">Conoce mi historia</a>
+                    <h5 class="card-title">{{pet.nombre|title}}</h5>
+                    <a href="{{pet.id}}" class="btn btn-info">Conoce mi historia</a>
                     </div>
                 </div>
             </div>

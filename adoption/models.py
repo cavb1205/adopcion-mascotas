@@ -36,9 +36,10 @@ class Color(models.Model):
 
 class Esterilizado(models.Model):
     '''pet esterilization 1=si 0=no'''
-    esterilizado = models.BooleanField(default=0)
+    esterilizado = models.CharField(max_length=2)
 
-    
+    def __str__(self):
+        return self.esterilizado
 
 class Tamano(models.Model):
     '''pet size'''

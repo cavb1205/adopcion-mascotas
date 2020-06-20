@@ -1,0 +1,34 @@
+{% extends 'base.html'%}
+{% block title %}|{{pet.nombre|title}}{%endblock%}
+{% block content %}
+    <div class="card text-center m-5">
+        <div class="card-header">
+            {{pet.estado_adopcion}}
+        </div>
+        <div class="card-body">
+        <h3 class="card-title mb-3">{{pet.nombre|title}}</h3>
+        <img src="/media/{{pet.imagen_destacada}}" class="img-fluid img-thumbnail" alt="{{pet.nombre}}">
+        <p class="card-text mt-4">{{pet.historia}}</p>
+        <p class="card-text m-4">Información Básica: 
+            <li>Edad: {{pet.edad}} Meses</li> 
+            <li>Raza: {{pet.raza}}</li> 
+            <li>Tamaño: {{pet.tamano}}</li>
+            <li>Sexo: {{pet.sexo}}</li>
+            <li>Color: {{pet.color}}</li>
+            <li>Esterilizado: {{pet.esterilizado|yesno:'Si,No'}}</li>
+            <li>Ubicación: {{pet.ubicacion}}</li>
+        </p>
+        <a href="#" class="btn btn-success m-4">Adoptar a {{pet.nombre|title}}</a>
+        <a href="#" class="btn btn-warning m-4">Apadrinar a {{pet.nombre|title}}</a>
+        </div>
+        <div class="card-footer text-muted">
+            Publicado en {{pet.fecha_publicacion}}
+        </div>
+    </div>
+
+
+{% endblock%}
+
+
+
+
