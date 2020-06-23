@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-
+{%load static%}
 
 {% block carousel %}
     <!-- include carrousel -->
@@ -7,7 +7,51 @@
 {% endblock %}
 
 {% block content %}
+<div class="container mt-4 mb-4">
+    <div class="row row-cols-1 row-cols-md-4">
+        <div class="col-md-6 col-lg-3 mb-4">
+          <div class="card" id='home-card-img'>
+            <img src="{% static 'png/adoptar.png'%}" class="card-img-top img-fluid pt-3 m-auto" alt="perro y gato imagen animada">
+            <div class="card-body">
+              <h5 class="card-title text-center">Quiero Adoptar Un Peludo</h5>
+              <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <a class = 'btn btn-info btn-lg btn-block' href="">Ver más</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 mb-4">
+          <div class="card" id='home-card-img'>
+            <img src="{% static 'png/donacion.png'%}" class="card-img-top img-fluid m-auto pt-3" alt="donaciones">
+            <div class="card-body">
+              <h5 class="card-title text-center">Quiero Donar</h5>
+              <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <a class = 'btn btn-info btn-lg btn-block' href="">Ver más</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 mb-4">
+          <div class="card" id='home-card-img'>
+            <img src="{% static 'png/apadrinar.png'%}" class="card-img-top img-fluid pt-3 m-auto" alt="...">
+            <div class="card-body">
+              <h5 class="card-title text-center">Quiero Apadrinar Un Peludo</h5>
+              <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
+              <a class = 'btn btn-info btn-lg btn-block' href="">Ver más</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 mb-4">
+          <div class="card" id='home-card-img'>
+            <img src="{% static 'png/voluntario.png'%}" class="card-img-top img-fluid pt-3 m-auto" alt="...">
+            <div class="card-body">
+              <h5 class="card-title text-center">Quiero Ser Voluntario</h5>
+              <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <a class = 'btn btn-info btn-lg btn-block' href="">Ver más</a>
+            </div>
+          </div>
+        </div>
+      </div>
+</div>
 
+    
 
-    <h1>Hola soy el home page</h1>
 {% endblock %}

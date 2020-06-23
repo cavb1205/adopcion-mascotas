@@ -8,26 +8,38 @@
         <div class="card-body">
         <h3 class="card-title mb-3">{{pet.nombre|title}}</h3>
         <img src="/media/{{pet.imagen_destacada}}" class="img-fluid img-thumbnail" alt="{{pet.nombre}}">
-        <p class="card-text mt-4">{{pet.historia}}</p>
-        <p class="card-text m-4">Información Básica: 
-            <li>Edad: {{pet.edad}} Meses</li> 
-            <li>Raza: {{pet.raza}}</li> 
-            <li>Tamaño: {{pet.tamano}}</li>
-            <li>Sexo: {{pet.sexo}}</li>
-            <li>Color: {{pet.color}}</li>
-            <li>Esterilizado: {{pet.esterilizado|yesno:'Si,No'}}</li>
-            <li>Ubicación: {{pet.ubicacion}}</li>
-        </p>
-        <a href="#" class="btn btn-success m-4">Adoptar a {{pet.nombre|title}}</a>
+        <p class="card-text text-left mt-4">{{pet.historia}}</p>
+        <div id="contenedor-ul-car-detail">
+            <h5 class="card-text m-4 ">Información Básica: </h5>
+                <ul class="list-group list-group-flush text-left" id='list-basic-info'>
+                    <li class="list-group-item">Edad: {{pet.edad}} Meses</li> 
+                    <li class="list-group-item">Raza: {{pet.raza}}</li> 
+                    <li class="list-group-item">Tamaño: {{pet.tamano}}</li>
+                    <li class="list-group-item">Sexo: {{pet.sexo}}</li>
+                    <li class="list-group-item">Color: {{pet.color}}</li>
+                    <li class="list-group-item">Esterilizado: {{pet.esterilizado}}</li>
+                    <li class="list-group-item">Vacunado: {{pet.vacunado}}</li>
+                    <li class="list-group-item">Esterilizado: {{pet.esterilizado}}</li>
+                    <li class="list-group-item">No. Chip: {{pet.chip}}</li>
+                    <li class="list-group-item">Estado Salud: {{pet.estado_salud}}</li>
+                    <li class="list-group-item">Ubicación: {{pet.ubicacion}}</li>
+                    <li class="list-group-item">Cuidados Especiales: {{pet.cuidados_especiales}}</li>
+                </ul>
+        </div>
+        <a href="#" class="btn btn-success m-4" data-toggle="modal" data-target="#exampleModal">Adoptar a {{pet.nombre|title}}</a>
         <a href="#" class="btn btn-warning m-4">Apadrinar a {{pet.nombre|title}}</a>
         </div>
         <div class="card-footer text-muted">
             Publicado en {{pet.fecha_publicacion}}
         </div>
     </div>
-
+    <div class="boton-lista">
+        <a class="btn btn-info" href="{% url 'adoption:adopcion_list'%}">Regresar a la lista</a>
+    </div>
 
 {% endblock%}
+
+
 
 
 

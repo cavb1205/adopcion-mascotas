@@ -12,11 +12,27 @@
     object-fit: cover;
     
 }
+#home-card-img {
+    border: none;
+}
+#home-card-img img{
+    width: 50% !important;
+    height: auto;
+  
+}
+
 
 .card-img-detail {
     width: 400px;
     border-radius: 10px;
 
+}
+
+
+
+.boton-lista {
+    display: flex !important;
+    justify-content: center;
 }
 
 
@@ -37,3 +53,4 @@
 .social-icon {
     width: 50px;
 }
+
