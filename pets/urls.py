@@ -26,7 +26,9 @@ from . import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name='home'),
+    path('perfil/', include('perfil.urls', namespace='perfil')),
     path('adopcion/', include('adoption.urls', namespace='adopcion')),
+    path('voluntarios/', include('voluntario.urls', namespace='voluntario')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
  
