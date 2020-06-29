@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% load static %}
+    
+    <div class="alert alert-success mt-4" role="alert">
+        <h4 class="alert-heading text-center">Gracias por adoptar!</h4>
+        <p>Tu solicitud de adopción se ha enviado correctamente, nuestro equipo evaluará los datos suministrados y nos pondremos en contacto contigo para dar respuesta a la solicitud. </p>
+        <hr>
+        <p class="mb-0">Nuevamente te damos las gracias por querer ayudar a nuestros peludos...</p>
+    </div>
+    <div class="imagen text-center">
+        <img src="{% static 'images/gracias.gif'%}" class="img-fluid mx-auto" alt="Responsive image">
+    </div>
+    
+{% endblock %}

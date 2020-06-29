@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <form class="mt-4" method="POST" >
+        {% csrf_token %}
+        {{ form.non_field_errors }}
+
+        <h1 class="text-secondary">Formulario de adopción de  {{pet.nombre|title}}</h1>
+        
+        <div class="form-group">
+            <label for="rut">Rut</label>
+            <input type="text" class="form-control" id="rut" name = 'rut' aria-describedby="textHelp" required>
+            <small id="rutHelp" class="form-text text-muted">Ejemplo: 25000000-6</small>
+        </div>
+        <div class="form-group">
+            <label for="nombres">Nombres</label>
+            <input type="text" class="form-control" id="nombres" name = 'nombres' required>
+        </div>
+        <div class="form-group">
+            <label for="apellidos">Apellidos</label>
+            <input type="text" class="form-control" id="apellidos" name = 'apellidos' required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" name = 'email' id="email" aria-describedby="emailHelp" placeholder="name@example.com" required>
+        </div>
+        <div class="form-group">
+            <label for="direccion">Direccion</label>
+            <input type="text" class="form-control" id="direccion" name = 'direccion' required>
+        </div>
+        <div class="form-group">
+            <label for="fecha_nacimiento">Fecha de Nacimiento</label>
+            <input type="date" class="form-control" id="fecha_nacimiento" name = 'fecha_nacimiento' required>
+        </div>
+        <div class="form-group">
+            <label for="telefono_fijo">Teléfono Fijo</label>
+            <input type="text" class="form-control" id="telefono_fijo" name = 'telefono_fijo' required>
+        </div>
+        <div class="form-group">
+            <label for="telefono_celular">Teléfono Celular</label>
+            <input type="text" class="form-control" id="telefono_celular" name = 'telefono_celular' required>
+        </div>
+        <button type="submit" class="btn btn-primary">Enviar Solicitud de Adopción</button>
+    </form>
+
+</div>
+
+{% endblock %}

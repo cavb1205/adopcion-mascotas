@@ -40,7 +40,39 @@
 {% endblock%}
 
 
+{% block modal %}
 
-
-
-
+  <!-- Modal requisitos adopcion -->
+  <div class="modal fade" id="exampleModal" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">Requisitos para adoptar</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <ul>
+            <li>Ser mayor de edad.</li>
+            <li>Aceptar seguimiento de adopción.</li>
+            <li>La persona en firmar será el responsable del adoptado.</li>
+            <li>Casa con sitio cerrado para evitar escapes.</li>
+            <li>Firmar contrato de adopción.</li>
+            <li>Castración o esterilización ineludible si no esta operado.</li>
+            <li>Disponer de un lugar limpio y abrigado.</li>
+            <li>Alimentación adecuada y atención veterinaria correspondiente.</li>
+            <li>Devolución inmediata si no puede cumplir con la responsabilidad de tenencia responsable.</li>
+            <li>Consulte su bolsillo antes de adoptar.</li>
+            <li>Entrevista pre-adopción.</li>
+          </ul>
+          <p class="alert alert-warning">Si cumple con los ateriores requisitos de clic en "Aceptar y Continuar", de lo contrario seleccione "Cerrar"</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+          <a href="{% url 'adopcion:solicitud_adopcion' pet.id %}" type="button" class="btn btn-success">Aceptar y Continuar</a>
+        </div>       
+      </div>
+    </div>
+  </div>
+{% endblock %}

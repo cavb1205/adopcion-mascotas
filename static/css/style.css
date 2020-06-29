@@ -60,3 +60,9 @@
     padding: 20px;
     border: 1px solid red;
 }
+
+
+.contenedor-formulario{
+    max-width: 80%;
+    margin: 0 auto;
+}

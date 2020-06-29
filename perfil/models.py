@@ -19,6 +19,7 @@ class Perfil(models.Model):
     '''perfil user model'''
 
     user = models.OneToOneField(User, on_delete=models.CASCADE)
+    rut = models.CharField(max_length=10,null=True)
     avatar = models.ImageField(upload_to='images/perfil/', blank=True)
     fecha_nacimiento = models.DateField(auto_now=False, blank=True,null=True)
     direccion = models.CharField(max_length=255, blank=True)
@@ -40,3 +41,19 @@ class Perfil(models.Model):
             return 'Usuario ya fue creado'
         print('fin a la funcion crear perfil')
 
+
+
+
+
+
+class Contacto(models.Model):
+    '''formulario de contacto'''
+
+    nombres = models.CharField(max_length=255)
+    email = models.EmailField()
+    asunto = models.CharField(max_length=255)
+    mensaje = models.TextField()
+    fecha_contacto = models.DateField(auto_now_add=True,editable=False)
+
+    def __str__(self):
+        return self.asunto

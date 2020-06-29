@@ -1,5 +1,10 @@
 from django.db import models
 
+from django.contrib.auth.models import User
+from perfil.models import Perfil
+
+
+
 usuarios = ['camilo','kevin','paola','german']
 
 
@@ -125,3 +130,18 @@ class Pet(models.Model):
 
     def __str__(self):
         return self.nombre
+
+
+
+
+class Solicitud_Adopcion(models.Model):
+    '''solicitudes de adopcion enviadas por el formulario'''
+
+    pet = models.ForeignKey(Pet, on_delete=models.CASCADE)
+    perfil = models.ForeignKey(Perfil, on_delete=models.CASCADE)
+    fecha_solicitud = models.DateField(auto_now_add=True)
+    estado_solicitud = models.BooleanField(blank=True, default=False)
+    comentarios_solicitud = models.TextField(blank=True)
+
+    def __str__(self):
+        return self.fecha_solicitud

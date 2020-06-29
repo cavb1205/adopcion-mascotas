@@ -26,6 +26,8 @@ from . import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name='home'),
+    path('contacto/',views.contacto, name='contacto'),
+    path('gracias/',views.gracias, name='gracias'),
     path('perfil/', include('perfil.urls', namespace='perfil')),
     path('adopcion/', include('adoption.urls', namespace='adopcion')),
     path('voluntarios/', include('voluntario.urls', namespace='voluntario')),
