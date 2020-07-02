@@ -6,7 +6,9 @@
         {% csrf_token %}
         {{ form.non_field_errors }}
 
-        <h1 class="text-secondary">Formulario de adopción de  {{pet.nombre|title}}</h1>
+        <h1 class="text-secondary text-center">Formulario de adopción de  {{pet.nombre|title}}</h1>
+        <img src="/media/{{pet.imagen_destacada}}" class="img-thumbnail mx-auto d-block imagen-formulario-adopcion mb-4" alt="{{pet.nombre}}">
+      
         
         <div class="form-group">
             <label for="rut">Rut</label>

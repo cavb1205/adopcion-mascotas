@@ -12,6 +12,14 @@ class Casa_Temporal(Tipo_Pet):
     class Meta:
         proxy = True
 
+class Otras_actividades(models.Model):
+    '''otras actividades que se pueda colavorar'''
+
+    nombre_actividad = models.CharField(max_length=255)
+    descripcion_actividad = models.CharField(max_length=255)
+
+    def __str__(self):
+        return self.nombre_actividad
 
 
 class Actividades_Voluntario(models.Model):
@@ -19,14 +27,21 @@ class Actividades_Voluntario(models.Model):
     casa_temporal = models.ManyToManyField(Casa_Temporal,blank=True)
     donaciones = models.ManyToManyField(Tipo_Donacion,blank=True)
     eventos = models.ManyToManyField(Tipo_Evento, blank=True)
-    rescates = models.BooleanField(verbose_name='Rescates', default=False)
-    vehiculo = models.BooleanField(verbose_name='Vehículo', default=False)
-    capacitacion = models.BooleanField(verbose_name='Capacitaciones, Charlas', default=False)
-    representacion_medios = models.BooleanField(verbose_name='Representación Medios', default=False)
-    cuidados_veterinarios = models.BooleanField(verbose_name='Cuidados Veterinarios', default=False)
-    legal = models.BooleanField(verbose_name='Legal(escritos, trámites, denuncias)', default=False)
+    otras_actividades = models.ManyToManyField(Otras_actividades, blank=True)
     experiencia = models.TextField(verbose_name='Experiencia',blank=True)
-    extra = models.CharField(max_length=255, blank=True)
+    extra = models.TextField(verbose_name='Sugerencia',blank=True)
    
     def __str__(self):
         return self.perfil.user.username
+
+
+
+
+class Solicitud_Voluntario(models.Model):
+    '''solicitudes para ser voluntario'''
+
+    perfil = models.ForeignKey(Perfil, on_delete=models.CASCADE)
+    actividades = models.ForeignKey(Actividades_Voluntario, on_delete=models.CASCADE)
+    fecha_solicitud = models.DateField(auto_now_add=True)
+
+    

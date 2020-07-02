@@ -36,7 +36,7 @@
             <a class="nav-link" href="{% url 'contacto'%}">Contacto<span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Mi Cuenta<span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="#">{% if user.is_authenticated %}Hola, {{ user.first_name }}{% else%} Login {% endif %}<span class="sr-only">(current)</span></a>
           </li>
       </ul>
     </div>

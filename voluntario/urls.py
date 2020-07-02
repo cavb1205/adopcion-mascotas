@@ -10,6 +10,7 @@ from . import views
 app_name = 'voluntario'
 urlpatterns = [
     path('', views.home, name='home'),
+    path('solicitud/', views.solicitud_voluntariado, name='solicitud_voluntariado'),
     
 ] 
 
