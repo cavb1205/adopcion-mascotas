@@ -4,122 +4,124 @@
 <div class="container">
     <form class="mt-4" method="POST" >
         {% csrf_token %}
-        {{form.as_p}}
-       
+        
+        <h1 class="text-secondary text-center mb-4">Formulario de inscripción de voluntariado</h1>
+        <h4 class="text-secondary m-4">Datos Personales</h4>
+        <div class="form-group">
+            <label for="rut">Rut</label>
+            <input type="text" class="form-control" id="rut" name = 'rut' aria-describedby="textHelp" required>
+            <small id="rutHelp" class="form-text text-muted">Ejemplo: 25000000-6</small>
+        </div>
+        <div class="form-group">
+            <label for="nombres">Nombres</label>
+            <input type="text" class="form-control" id="nombres" name = 'nombres' required>
+        </div>
+        <div class="form-group">
+            <label for="apellidos">Apellidos</label>
+            <input type="text" class="form-control" id="apellidos" name = 'apellidos' required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" name = 'email' id="email" aria-describedby="emailHelp" placeholder="name@example.com" required>
+        </div>
+        <div class="form-group">
+            <label for="direccion">Direccion</label>
+            <input type="text" class="form-control" id="direccion" name = 'direccion' required>
+        </div>
+        <div class="form-group">
+            <label for="fecha_nacimiento">Fecha de Nacimiento</label>
+            <input type="date" class="form-control" id="fecha_nacimiento" name = 'fecha_nacimiento' required>
+        </div>
+        <div class="form-group">
+            <label for="telefono_fijo">Teléfono Fijo</label>
+            <input type="text" class="form-control" id="telefono_fijo" name = 'telefono_fijo' required>
+        </div>
+        <div class="form-group">
+            <label for="telefono_celular">Teléfono Celular</label>
+            <input type="text" class="form-control" id="telefono_celular" name = 'telefono_celular' required>
+        </div>
 
-          <br>
-          <br>
-        <button type="submit" class="btn btn-primary m-4">Enviar Solicitud</button>
-    </form>
+        <div class="contenedor-checkbox-voluntario mt-4">
+            <h4 class="text-secondary m-4 text-center">Como voluntario puedo ayudar con:</h4>
+            <div class="row mt-2">
+                <div class="col-sm-12 col-md-6 col-lg-4 ">
+                    <div class="contenedor-campos-individuales">
+                        <div class="form-group">
+                            <label for="casa_temporal" class="text-info">Casa Temporal</label>
+                            <select multiple class="form-control" id="casa_temporal" name="casa_temporal">
+                                {% for tipo_mascota in form.casa_temporal %}
+                                    <option>{{tipo_mascota}}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-4 ">
+                    <div class="contenedor-campos-individuales">
+                        <div class="form-group">
+                            <label for="donaciones" class="text-info">Donaciones</label>
+                            <select multiple class="form-control" id="donaciones" name="donaciones">
+                                {% for donacion in form.donaciones %}
+                                    <option>{{donacion}}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-4 ">
+                    <div class="contenedor-campos-individuales">
+                        <div class="form-group">
+                            <label for="eventos" class="text-info">Eventos</label>
+                            <select multiple class="form-control" id="eventos" name="eventos">
+                                {% for evento in form.eventos %}
+                                    <option>{{evento}}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row mt-2">
+                <div class="col-sm-12 col-md-6 col-lg-4">
+                    <div class="contenedor-campos-individuales ">
+                        <div class="form-group">
+                            <label for="otras_actividades" class="text-info">Otras Actividades</label>
+                            <select multiple class="form-control" id="otras_actividades" name="otras_actividades">
+                                {% for actividad in form.otras_actividades %}
+                                    <option>{{actividad}}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-2">
+                <div class="col">
+                    <div class="form-group">
+                        <label for="exampleFormControlTextarea1">Tienes Experiencia?</label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="experiencia"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-2">
+                <div class="col">
+                    <div class="form-group">
+                        <label for="exampleFormControlTextarea1">Alguna sugerencia?</label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="extra"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+            
 
-</div>
+                <br>
+                <br>
+                <button type="submit" class="btn btn-primary m-4">Enviar Solicitud</button>
+            </form>
+
+        </div>
 
 {% endblock %}
 
 
-
-<h1 class="text-secondary text-center mb-4">Formulario de inscripción de voluntariado</h1>
-<h4 class="text-secondary m-4">Datos Personales</h4>
-<div class="form-group">
-    <label for="rut">Rut</label>
-    <input type="text" class="form-control" id="rut" name = 'rut' aria-describedby="textHelp" required>
-    <small id="rutHelp" class="form-text text-muted">Ejemplo: 25000000-6</small>
-</div>
-<div class="form-group">
-    <label for="nombres">Nombres</label>
-    <input type="text" class="form-control" id="nombres" name = 'nombres' required>
-</div>
-<div class="form-group">
-    <label for="apellidos">Apellidos</label>
-    <input type="text" class="form-control" id="apellidos" name = 'apellidos' required>
-</div>
-<div class="form-group">
-    <label for="email">Email</label>
-    <input type="email" class="form-control" name = 'email' id="email" aria-describedby="emailHelp" placeholder="name@example.com" required>
-</div>
-<div class="form-group">
-    <label for="direccion">Direccion</label>
-    <input type="text" class="form-control" id="direccion" name = 'direccion' required>
-</div>
-<div class="form-group">
-    <label for="fecha_nacimiento">Fecha de Nacimiento</label>
-    <input type="date" class="form-control" id="fecha_nacimiento" name = 'fecha_nacimiento' required>
-</div>
-<div class="form-group">
-    <label for="telefono_fijo">Teléfono Fijo</label>
-    <input type="text" class="form-control" id="telefono_fijo" name = 'telefono_fijo' required>
-</div>
-<div class="form-group">
-    <label for="telefono_celular">Teléfono Celular</label>
-    <input type="text" class="form-control" id="telefono_celular" name = 'telefono_celular' required>
-</div>
-
-<div class="contenedor-checkbox-voluntario mt-4">
-    <h4 class="text-secondary m-4 text-center">Como voluntario puedo ayudar con:</h4>
-    <div class="row mt-2">
-        <div class="col-sm-12 col-md-6 col-lg-4 ">
-            <div class="contenedor-campos-individuales">
-                <h5 class="text-info">Casa Temporal</h5>
-                {% for tipo_mascota in form.casa_temporal %}
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" name="casa_temporal">
-                        <label class="form-check-label" for="inlineCheckbox1">{{tipo_mascota}}</label>
-                    </div>
-                {% endfor %}
-            </div>
-        </div>
-        <div class="col-sm-12 col-md-6 col-lg-4 ">
-            <div class="contenedor-campos-individuales">
-                <h5 class="text-info">Donaciones</h5>
-                {% for donacion in form.donaciones %}
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" name="donaciones">
-                        <label class="form-check-label" for="inlineCheckbox1">{{donacion}}</label>
-                    </div>
-                {% endfor %}
-            </div>
-        </div>
-        <div class="col-sm-12 col-md-6 col-lg-4 ">
-            <div class="contenedor-campos-individuales">
-                <h5 class="text-info">Eventos</h5>
-                {% for evento in form.eventos %}
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" name="eventos">
-                        <label class="form-check-label" for="inlineCheckbox1">{{evento}}</label>
-                    </div>
-                {% endfor %}
-            </div>
-        </div>
-    </div>
-    <h5 class="text-info text-center m-4">Otras Actividades</h5>
-    <div class="row mt-2">
-        {% for actividad in form.otras_actividades %}
-        <div class="col-sm-12 col-md-6 col-lg-4 ">
-            <div class="contenedor-campos-individuales ">
-                
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" name="otras_actividades">
-                        <label class="form-check-label" for="inlineCheckbox1">{{actividad}}</label>
-                    </div>
-                
-            </div>
-        </div>
-        {% endfor %}
-    </div>
-    <div class="row mt-2">
-        <div class="col">
-            <div class="form-group">
-                <label for="exampleFormControlTextarea1">Tienes Experiencia?</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="experiencia"></textarea>
-              </div>
-        </div>
-    </div>
-    <div class="row mt-2">
-        <div class="col">
-            <div class="form-group">
-                <label for="exampleFormControlTextarea1">Alguna sugerencia?</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="extra"></textarea>
-              </div>
-        </div>
-    </div>
-</div>
