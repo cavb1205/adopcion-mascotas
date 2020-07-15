@@ -1,0 +1,22 @@
+{% extends 'base.html'%}
+
+{% block content %}
+    <h1 class="text-center m-5">Veterinarias Disponibles</h1>
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 mt-5">
+        {% for veterinaria in veterinarias %}
+            <div class="col mb-4">
+              <div class="card">
+                <img src="/media/{{veterinaria.imagen}}" class="card-img-top rounted" alt="{{veterinaria.nombre}}">
+                <div class="card-body">
+                  <h5 class="card-title">{{veterinaria.nombre|title}}</h5>
+                  <p class="card-text">Dirección: {{veterinaria.direccion}}</p>
+                  <p class="card-text">Teléfonos: {{veterinaria.telefonos}}</p>
+                  <p class="card-text">Horarios de atención: {{veterinaria.horarios}}</p>
+                </div>
+              </div>
+            </div>
+        {% endfor %}
+    </div>
+
+{% endblock %}
+

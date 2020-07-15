@@ -19,21 +19,41 @@
             <a class="dropdown-item" href="#">Another action</a>
           </div>
         </li>
-        <li class="nav-item dropdown">
+          <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Adopción
+              Participa
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="{% url 'adoption:adopcion_list'%}">Peludos Esperando Hogar</a>
+              <a class="dropdown-item" href="{% url 'adoption:adopcion_list'%}">Adopta</a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Peludos Adoptados :D</a>
+              <a class="dropdown-item" href="#">Donaciones</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Padrinos</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Socios</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="{% url 'voluntario:home'%}">Voluntarios</a>
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'voluntario:home'%}">Voluntarios<span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="#">Eventos<span class="sr-only">(current)</span></a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'contacto'%}">Contacto<span class="sr-only">(current)</span></a>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Información Importante
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="{% url 'contacto'%}">Contacto<span class="sr-only">(current)</span></a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="{% url 'maltrato'%}">Maltrato animal</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Animales perdidos</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Documentos informativos</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="{% url 'veterinaria_list' %}">Directorio veterinarias</a>
+              
+            </div>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">{% if user.is_authenticated %}Hola, {{ user.first_name }}{% else%} Login {% endif %}<span class="sr-only">(current)</span></a>

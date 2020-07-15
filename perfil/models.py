@@ -6,6 +6,8 @@ from django.dispatch import receiver
 
 
 
+
+
 class Tipo_Perfil(models.Model):
     '''tipo de perfil, si el suaurio es voluntario, socio, etc'''
     nombre_tipo_perfil = models.CharField(max_length=255)
@@ -45,7 +47,7 @@ class Perfil(models.Model):
 
 
 
-
+###seccion informacion importante###
 class Contacto(models.Model):
     '''formulario de contacto'''
 
@@ -57,3 +59,31 @@ class Contacto(models.Model):
 
     def __str__(self):
         return self.asunto
+
+
+class Maltrato(models.Model):
+    '''formulario maltrato animal'''
+
+    nombres = models.CharField(max_length=255)
+    telefono = models.CharField(max_length=12)
+    email = models.EmailField()
+    asunto = models.CharField(max_length=255)
+    mensaje = models.TextField()
+    fecha_contacto = models.DateField(auto_now_add=True,editable=False)
+
+    def __str__(self):
+        return self.asunto
+
+
+
+class Veterinarias(models.Model):
+    '''modelo veterinarias'''
+
+    imagen = models.ImageField(upload_to='images/veterinarias/')
+    nombre = models.CharField(max_length=255)
+    direccion = models.CharField(max_length=255)
+    telefonos = models.CharField(max_length=255)
+    horarios = models.CharField(max_length=255)
+
+    def __str__(self):
+        return self.nombre

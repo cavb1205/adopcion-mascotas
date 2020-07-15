@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% load static %}
+    <h1 class="text-center text-secondary mt-4">Maltrato hacia los animales</h1>
+    <div class="contenedor-formulario">
+      <div class="contenedor-imagen-contacto mb-4">
+        <img src="{% static 'images/maltrato-animal.jpg'%}" class="img-fluid " alt="imagen de perro escondido" id='contacto-img'>
+      </div>
+        <p>La crueldad hacia los animales, también llamada crueldad animal o abuso animal, comprende comportamientos que causan dolor innecesario o estrés a los animales no humanos. Los mismos van desde la negligencia en los cuidados básicos hasta la tortura, la mutilación o la muerte intencionada</p>
+        <p>Algunos tipos de maltrato son:</p>
+        <ul>
+            <li>Mantenerlos en instalaciones inadecuadas en función de sus hábitos.</li>
+            <li>Descuidar su higiene y su salud o abandonarlos.</li>
+            <li>No facilitarles alimentación adecuada para su desarrollo y el mantenimiento de su salud.</li>
+            <li>Golpearlos, herirlos o mutilarlos, excepto que sea imprescindible a criterio de un veterinario.</li>
+        </ul>
+
+        <h3>Como denunciar maltrato animal en Chile?</h3>
+        <p>En Chile, como en otros países, el maltrato animal por acción u omisión, las peleas de animales, así como la promoción de prácticas y espectáculos que impliquen maltrato grave, deterioro de la salud o la muerte de los animales, son conductas que son castigadas por la ley.</p>
+        <p>Desde 1989, en Chile, se consideró el maltrato animal como una falta penal y según el Artículo 291 Bis del Código Penal dice que “El que cometiere actos de maltrato o crueldad con animales, será castigado con la pena de presidio menor en su grado mínimo a medio (estableciendo la pena de privación de libertad desde 61 días hasta tres años) y multa de dos a treinta unidades tributarias mensuales, o sólo con esta última”.</p>
+        <p>El código penal también castiga la ausencia de suministros en alimento y agua, el empleo de instrumentos o sustancias que provoquen a los animales sufrimiento o muerte. Al igual que la remoción, destrucción o alteración de cualquier miembro, órgano o apéndice del animal que por causas distintas a las propiamente veterinarias, sanitarias u otras expresamente autorizadas por la ley.</p>
+
+        <h4>¿Cómo denunciar?</h4>
+        <p>El maltrato animal puede ser denunciado por cualquier persona bajo el modelo de querella criminal, un escrito judicial que debe hacerse ante el Ministerio Público (Fiscalía local del lugar en donde se ha cometido el acto de maltrato), con los carabineros puedes denunciar llamando al teléfono 133, o con Brigadas Investigadoras de Delitos Contra el Medio Ambiente (BIDEMA), o a través de una querella en los tribunales de justicia a nivel nacional.</p>
+
+        <p>Pasos para interponer la denuncia</p>
+
+        <ol>
+            <li><strong> Recopile la información:</strong>
+                <p>Debes tener en cuenta los siguientes criterios.</p>
+                <p>A. Narración verídica con la mayor información del hecho de maltrato en donde se incluya la fecha exacta (día y hora), así como el lugar en donde ocurrió el hecho (calle, intersección de calles, numeración, comuna).</p>
+                <p>B. Datos básicos del autor del hecho de maltrato, información como nombre completo, dirección de residencia, nombres de testigos que puedan dar fe del hecho, estos pueden ser útiles en el momento de realizar su denuncia.</p>
+                <p>C. Será de gran ayuda si puedes registrar los hechos por medio de fotografías o material audiovisual que funcionen como prueba del maltrato.</p>
+                <p>D. Debes adjuntar una evaluación o diagnóstico de un Médico Veterinario, que documente por medio de un informe médico la condición corporal, las lesiones, heridas o traumas provocadas por la agresión y si es el caso el registro de posibles golpes con objetos contundentes, uso de elementos cortopunzantes, etc., con su debido pronóstico, evolución y tratamiento. De haber terminado en muerte el acto de maltrato, se debe adjuntar un informe de necropsia que de cuenta de las causas claras de la defunción del animal.</p>
+            </li>
+            <li>
+                <strong>Encuentre la oficina del ente más cercano:</strong>
+                <p>Puedes comunicarte con alguna de las entidades donde puedes interponer la denuncia, para que te informen cual es la oficina más cercana a tu residencia.</p> 
+                <p>También puedes escribir a los correos bidema@investigaciones.cl y analisis.bidema@investigaciones.cl de la Brigada Investigadora de Delitos Contra el Medio Ambiente y Patrimonio (BIDEMA).</p>
+           
+            </li>
+            <li>
+                <strong>Realice la denuncia:</strong>
+                <p>Una vez que identificó la fiscalía, comisaría o oficina de BIDEMA más cercana, puede ir a interponer su denuncia con todas las pruebas y documentos que recopiló.</p>
+            </li>
+            <li>
+                <strong>¿Qué pasa después de interpuesta la denuncia?</strong>
+                <p>Una vez interpuesta la denuncia, ante una de las tres entidades mencionadas, sólo al fiscal corresponde la calificación jurídica del hecho, es decir, analizar si el hecho califica o no como delito, y establecer el tipo específico de delito, definir si hay responsabilidad penal del denunciado, determinar si la acción penal se encuentra, o no, prescrita por el paso del tiempo.</p>
+                <p>Una vez ingresada la denuncia a la fiscalía se le asigna un número denominado Rol Único de Causa (RUC). Con este número, el denunciante, puede hacer el seguimiento a la denuncia. Además, el denunciante será llamado por la fiscalía o BIDEMA a prestar declaración, la cual será consignada en un acta leída y firmada –conforme- por el denunciante.</p>
+            </li>
+        </ol>
+
+        <div class="alert alert-warning" role="alert">
+            Si deseas denunciar o solicitar asesoria sobre casos de maltrato por favor déjanos tus datos en el siguiente formulario, serás contactado por una persona de la fundación.
+        </div>
+        <form method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="exampleFormControlInput1">Nombres</label>
+                <input type="text" class="form-control" id="exampleFormControlInput1" name="nombres" required>
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlInput1">Teléfono de contacto</label>
+                <input type="text" class="form-control" id="exampleFormControlInput1" name="telefono" required>
+            </div>
+            <div class="form-group">
+              <label for="exampleFormControlInput1">Email</label>
+              <input type="email" class="form-control" id="exampleFormControlInput1" name="email" placeholder="name@example.com" required>
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlInput1">Asunto</label>
+                <input type="text" class="form-control" id="exampleFormControlInput1" name="asunto" required>
+            </div>
+            <div class="form-group">
+              <label for="exampleFormControlTextarea1">Mensaje</label>
+              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="mensaje" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Enviar</button>
+          </form>
+    </div>
+   
+{% endblock %}

@@ -1,0 +1,80 @@
+{% extends 'base.html'%}
+{% block title %}Apadrinar a {{pet.nombre}}{%endblock%}
+
+{% block content %}
+    <div class="padrino-info">
+        <h2>¿EN QUÉ CONSISTE SER MADRINA O PADRINO?</h2>
+            <p>Inscribiéndote como madrina o padrino en Fundación Huella Animal estarás ayudando a nuestros rescatados a cubrir sus gastos en hogar, comida y salud.</p>
+            
+            <p>Los padrinos y madrinas son personas que se comprometen a aportar mensualmente una cantidad de dinero a uno de nuestros rescatados.</p>
+            
+            <p>De esta manera, como bien dice el nombre, la persona “apadrina” al rescatado para ayudarle a mantenerse sano y feliz. Esta modalidad es similar a los Socios.</p>
+    </div>
+    <div class="padrino-info">
+        <h2>¿POR QUÉ SER MADRINA O PADRINO?</h2>
+        <p>Para nuestra fundación el aporte de los padrinos es fundamental, ya que sus contribuciones nos permiten asegurar la alimentación y salud de uno de nuestros rescatados.</p>
+    </div>
+    <div class="padrino-info">
+        <h2>¿CÓMO ME HAGO PADRINO O MADRINA?</h2>
+        <p>Para ser socio sólo debes realizar estos tres pasos:
+
+            Escoge a uno de los rescatados en busca de padrinos más abajo.
+            Escoge uno de las cuatro modalidades de padrino: Bronce ($20.000), Silver ($40.000), Gold ($60.000) y Platinum ($80.000).
+            Selecciona la modalidad y serás redirigido a la página de pago para efectuar la transferencia.</p>
+    </div>
+
+
+    <div class="planes">
+        {% for key, value in plans.items %}
+            <div class="plan-info">
+                {{key}}
+                {% for k,v in value.items %}
+                    {{k}}{{v}}
+                {% endfor %}
+            </div>
+        {% endfor %}
+    </div>
+
+
+{% endblock%}
+
+
+{% block modal %}
+
+<!-- Modal requisitos adopcion -->
+<div class="modal fade" id="exampleModal" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="staticBackdropLabel">Requisitos para adoptar</h5>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <ul>
+        <li>Ser mayor de edad.</li>
+        <li>Aceptar seguimiento de adopción.</li>
+        <li>La persona en firmar será el responsable del adoptado.</li>
+        <li>Casa con sitio cerrado para evitar escapes.</li>
+        <li>Firmar contrato de adopción.</li>
+        <li>Castración o esterilización ineludible si no esta operado.</li>
+        <li>Disponer de un lugar limpio y abrigado.</li>
+        <li>Alimentación adecuada y atención veterinaria correspondiente.</li>
+        <li>Devolución inmediata si no puede cumplir con la responsabilidad de tenencia responsable.</li>
+        <li>Consulte su bolsillo antes de adoptar.</li>
+        <li>Entrevista pre-adopción.</li>
+      </ul>
+      <p class="alert alert-warning">Si cumple con los ateriores requisitos de clic en "Aceptar y Continuar", de lo contrario seleccione "Cerrar"</p>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+      <a href="{% url 'adopcion:solicitud_adopcion' pet.id %}" type="button" class="btn btn-success">Aceptar y Continuar</a>
+    </div>       
+  </div>
+</div>
+</div>
+
+
+
+{% endblock %}

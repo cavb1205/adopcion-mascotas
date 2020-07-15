@@ -91,3 +91,38 @@ def solicitud_adopcion(request, pet_id):
 def gracias(request):
     pass
     return render(request,'adoption/adopcion_gracias.html')
+
+
+
+def apadrinar(request,pet_id):
+    '''apadrinar un peludo'''
+
+    pet = Pet.objects.get(id=pet_id)
+    plans = {
+        'bronce':{
+            'valor':20000,
+            'beneficio':'Cubre un mes de comida para un perro',
+            'tiempo':'mensual'
+        },
+        'silver':{
+            'valor':40000,
+            'beneficio':'Cubre un mes de comida e insumos veterinarios',
+            'tiempo':'mensual'
+        },
+        'gold':{
+            'valor':60000,
+            'beneficio':'Cubre la alimentación, atención e insumos veterinarios',
+            'tiempo':'mensual'
+        },
+        'platinum':{
+            'valor':80000,
+            'beneficio':'Cubre el gasto total en salud, refugio y alimentación de un perro',
+            'tiempo':'mensual'
+        }
+    }        
+            
+    context = {
+        'pet':pet,
+        'plans':plans
+    }
+    return render(request,'adoption/apadrinar_detail.html',context)

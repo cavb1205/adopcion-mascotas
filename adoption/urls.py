@@ -8,5 +8,5 @@ urlpatterns = [
     path('<int:id>/', views.adoption_detail, name = 'adopcion_detail'),
     path('solicitud/<int:pet_id>/', views.solicitud_adopcion, name = 'solicitud_adopcion'),
     path('gracias-por-adoptar/', views.gracias, name='gracias'),
-    #path('adoptados/', views.adoptados_list, name='adoptados_list'),
+    path('apadrinar/<int:pet_id>/', views.apadrinar, name='apadrinar'),
 ]
